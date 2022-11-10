@@ -16,12 +16,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Component
 public class BeerInventoryBootstrap implements CommandLineRunner {
-    public static final String BEER_1_UPC = "0631234200036";
-    public static final String BEER_2_UPC = "0631234300019";
-    public static final String BEER_3_UPC = "0083783375213";
-    public static final UUID BEER_1_UUID = UUID.fromString("0a818933-087d-47f2-ad83-2f986ed087eb");
-    public static final UUID BEER_2_UUID = UUID.fromString("a712d914-61ea-4623-8bd0-32c0f6545bfd");
-    public static final UUID BEER_3_UUID = UUID.fromString("026cc3c8-3a0c-4083-a05b-e908048c1b08");
+    public static final String BEER_1_UPC = "72527273070";
+    public static final String BEER_2_UPC = "72527273071";
+    public static final String BEER_3_UPC = "72527273072";
+    public static final UUID BEER_1_UUID = UUID.fromString("29338b1e-b06d-4208-aa4f-0f3c1493c49b");
+    public static final UUID BEER_2_UUID = UUID.fromString("e327693b-a3fd-46fb-b738-0f660c80754a");
+    public static final UUID BEER_3_UUID = UUID.fromString("6f7aee41-3609-4fe3-b819-a2f3f110d418");
 
     private final BeerInventoryRepository beerInventoryRepository;
 
@@ -44,14 +44,14 @@ public class BeerInventoryBootstrap implements CommandLineRunner {
                 .builder()
                 .beerId(BEER_2_UUID)
                 .upc(BEER_2_UPC)
-                .quantityOnHand(50)
+                .quantityOnHand(29)
                 .build());
 
         beerInventoryRepository.saveAndFlush(BeerInventory
                 .builder()
                 .beerId(BEER_3_UUID)
                 .upc(BEER_3_UPC)
-                .quantityOnHand(50)
+                .quantityOnHand(36)
                 .build());
 
         log.debug("Loaded Inventory. Record count: " + beerInventoryRepository.count());
